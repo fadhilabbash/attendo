@@ -99,7 +99,7 @@ class AttendanceController extends Controller
     {
         // Run the Artisan command to sync device users
         $users = ZKTecoUser::all();
-        // Return a response
+      
         return response()->json(['data' => $users, 'message' => 'Device users sync started']);
     }
 }
