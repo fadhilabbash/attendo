@@ -15,3 +15,5 @@ Route::get('/users', [AttendanceController::class, 'getUsers']);
 Route::post('/users', [AttendanceController::class, 'addUser']);
 Route::delete('/users/{uid}', [AttendanceController::class, 'deleteUser']);
 Route::get('/device-info', [AttendanceController::class, 'getDeviceInfo']);
+Route::get('/sync-device-users', [AttendanceController::class, 'syncDeviceUsers']);
+Route::get('/users-db', [AttendanceController::class, 'usersDb']);

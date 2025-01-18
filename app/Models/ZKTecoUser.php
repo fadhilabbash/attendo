@@ -13,10 +13,11 @@ class ZKTecoUser extends Model
 
     protected $fillable = [
         'uid',
-        'userid',
-        'name',
+        'user_id',
+        'device_name',
+        'real_name',
         'password',
         'role',
-        'cardno',
+        'card_no',
     ];
 }

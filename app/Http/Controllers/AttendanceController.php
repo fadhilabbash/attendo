@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ZKTecoUser;
 use App\Services\ZKTecoService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class AttendanceController extends Controller
 {
@@ -84,5 +86,20 @@ class AttendanceController extends Controller
         $this->zkService->disconnect();
 
         return response()->json($info);
+    }
+    public function syncDeviceUsers()
+    {
+        // Run the Artisan command to sync device users
+        Artisan::call('sync:device-users');
+
+        // Return a response
+        return response()->json(['message' => 'Device users sync started']);
+    }
+    public function usersDb()
+    {
+        // Run the Artisan command to sync device users
+        $users = ZKTecoUser::all();
+        // Return a response
+        return response()->json(['data' => $users, 'message' => 'Device users sync started']);
     }
 }

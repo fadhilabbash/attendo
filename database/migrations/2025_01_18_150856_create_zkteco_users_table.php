@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('zkteco_users', function (Blueprint $table) {
             $table->id();
             $table->integer('uid')->unique(); // Device-specific unique ID
-            $table->string('userid', 9)->unique(); // Database User ID (max length = 9)
-            $table->string('name', 24); // User's name (max length = 24)
+            $table->string('user_id', 9)->unique(); // Database User ID (max length = 9)
+            $table->string('device_name', 24); // User's name (max length = 24)
+            $table->string('real_name', 24)->nullable(); // User's name (max length = 24)
             $table->string('password', 8)->nullable(); // User's password (max length = 8)
             $table->integer('role')->default(1); // Role (default: User)
-            $table->string('cardno', 10)->nullable(); // Card number
+            $table->string('card_no', 10)->nullable(); // Card number
             $table->timestamps();
         });
     }

@@ -33,11 +33,11 @@ class SyncDeviceUsers extends Command
                 ZKTecoUser::updateOrCreate(
                     ['uid' => $deviceUser['uid']],
                     [
-                        'userid' => $deviceUser['userid'],
-                        'name' => $deviceUser['name'],
+                        'user_id' => $deviceUser['userid'],
+                        'device_name' => $deviceUser['name'],
                         'password' => $deviceUser['password'] ?? null,
                         'role' => $deviceUser['role'] ?? 1,
-                        'cardno' => $deviceUser['cardno'] ?? null,
+                        'card_no' => $deviceUser['cardno'] ?? null,
                     ]
                 );
             }
