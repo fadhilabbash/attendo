@@ -10,7 +10,7 @@ class ZKTecoService
 
     public function __construct()
     {
-        $ip = env('ZK_DEVICE_IP', '192.168.1.201'); // Set default IP in .env
+        $ip = env('ZK_DEVICE_IP', '192.168.100.154'); // Set default IP in .env
         $this->zk = new ZKTeco($ip);
     }
 
